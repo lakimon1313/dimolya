@@ -74,10 +74,7 @@
                 <iframe
                     src="https://docs.google.com/forms/d/e/1FAIpQLSfJ-kO8SP-Abkk3ZmGjLCKKkUBbv61h2i8J-J2aX79vTRRh-w/viewform?embedded=true"
                     width="640"
-                    height="659"
-                    frameborder="0"
-                    marginheight="0"
-                    marginwidth="0"
+                    height="720"
                     title="Форма підтвердження присутності"
                 >Loading...</iframe>
             </div>
