@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Оля плюс Діма">
+    <defs>
+        <linearGradient id="paper" x1="10" y1="4" x2="54" y2="60" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#faf7ef"/>
+            <stop offset="1" stop-color="#e8e1d2"/>
+        </linearGradient>
+        <pattern id="grain" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(18)">
+            <path d="M0 1.5H6" stroke="#786f5f" stroke-opacity=".07" stroke-width=".65"/>
+        </pattern>
+        <pattern id="stripe" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(58)">
+            <path d="M0 1H5" stroke="#eff0df" stroke-opacity=".18" stroke-width="1.2"/>
+        </pattern>
+        <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#39362e" flood-opacity=".18"/>
+        </filter>
+    </defs>
+    <rect width="64" height="64" rx="14" fill="url(#paper)"/>
+    <rect width="64" height="64" rx="14" fill="url(#grain)"/>
+    <path
+        d="M32 53C22.4 43.9 12 35.2 12 24.2C12 17.7 16.4 13 22.4 13C26.1 13 29.5 14.8 32 18.2C34.5 14.8 37.9 13 41.6 13C47.6 13 52 17.7 52 24.2C52 35.2 41.6 43.9 32 53Z"
+        fill="#7a7d5b"
+        filter="url(#softShadow)"
+    />
+    <path
+        d="M32 53C22.4 43.9 12 35.2 12 24.2C12 17.7 16.4 13 22.4 13C26.1 13 29.5 14.8 32 18.2C34.5 14.8 37.9 13 41.6 13C47.6 13 52 17.7 52 24.2C52 35.2 41.6 43.9 32 53Z"
+        fill="url(#stripe)"
+    />
+    <text
+        x="32"
+        y="36"
+        text-anchor="middle"
+        fill="#141412"
+        font-family="Iowan Old Style, Baskerville, Times New Roman, serif"
+        font-size="15"
+        font-weight="600"
+        letter-spacing="-.8"
+    >О+Д</text>
+</svg>
