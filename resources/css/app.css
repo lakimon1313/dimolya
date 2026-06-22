@@ -389,3 +389,9 @@
         }
     }
 }
+
+.rsvp-copy {
+    .rsvp-title, p {
+        text-shadow: 0 2px 5px #1A1A16;
+    }
+}
