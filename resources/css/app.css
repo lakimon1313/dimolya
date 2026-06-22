@@ -285,7 +285,7 @@
     .form-frame {
         overflow: hidden;
         width: 100%;
-        min-height: 659px;
+        min-height: 720px;
         background: #f4f0e8;
         border: 1px solid rgb(255 255 255 / 35%);
         box-shadow: 0 18px 24px rgb(22 22 22 / 18%);
@@ -293,7 +293,7 @@
 
     .form-frame iframe {
         width: 100%;
-        min-height: 659px;
+        min-height: 720px;
         border: 0;
         background: #f4f0e8;
     }
@@ -323,19 +323,20 @@
     }
 
     .signature-card {
-        display: grid;
-        place-items: center;
+        display: block;
     }
 
     .signature-heart {
         position: absolute;
-        width: min(32vw, 286px);
+        top: 50%;
+        left: 50%;
+        width: clamp(270px, 27vw, 360px);
         aspect-ratio: 1;
         background:
             repeating-linear-gradient(112deg, rgb(255 255 255 / 10%) 0 3px, transparent 3px 8px),
             #77795c;
         opacity: 0.88;
-        transform: rotate(45deg);
+        transform: translate(-25%, -25%) rotate(45deg);
     }
 
     .signature-heart::before,
@@ -357,23 +358,28 @@
     }
 
     .signature-text {
-        position: relative;
+        position: absolute;
+        top: 50%;
+        left: 50%;
         z-index: 2;
         margin: 0;
         color: #101010;
         font-family: var(--font-signature);
-        font-size: clamp(4.8rem, 10vw, 8.6rem);
+        font-size: clamp(4.4rem, 5.8vw, 6.6rem);
         font-weight: 400;
-        line-height: 0.68;
-        transform: rotate(-10deg);
+        line-height: 0.78;
+        text-align: center;
+        transform: translate(-48%, -38%) rotate(-8deg);
+        white-space: nowrap;
     }
 
     .signature-text span {
-        display: inline-block;
-        padding-left: 0.7em;
+        display: block;
+        margin: 0.1em 0 -0.02em;
+        padding-left: 0;
         font-family: var(--font-serif-display);
-        font-size: 0.44em;
-        line-height: 0.5;
+        font-size: 0.48em;
+        line-height: 0.45;
     }
 
     .rsvp-section {
