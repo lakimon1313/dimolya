@@ -13,9 +13,6 @@
     <main class="invite-page">
         <section class="invite-hero" aria-labelledby="invite-title">
             <article class="invite-card invite-card-main">
-                <div class="rule rule-top"></div>
-                <div class="rule rule-short"></div>
-
                 <p class="invite-kicker">Запрошуємо вас розділити з нами</p>
                 <h1 id="invite-title" class="invite-title">
                     один із найщасливіших днів<br>
