@@ -271,9 +271,7 @@
         width: min(100%, 480px);
         padding: 14px 22px 12px;
         color: #f4f0e8;
-        background: rgb(45 55 38 / 22%);
         border: 1px solid rgb(244 240 232 / 18%);
-        box-shadow: 0 12px 30px rgb(21 28 18 / 18%);
         text-align: center;
         text-shadow:
             0 2px 2px rgb(21 28 18 / 52%),
@@ -387,11 +385,5 @@
         iframe {
             height: 700px
         }
-    }
-}
-
-.rsvp-copy {
-    .rsvp-title, p {
-        text-shadow: 0 2px 5px #1A1A16;
     }
 }
