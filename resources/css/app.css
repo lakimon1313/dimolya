@@ -299,6 +299,7 @@
     .form-frame iframe {
         width: 100%;
         border: 0;
+        height: 820px;
         background: #f4f0e8;
     }
 }
