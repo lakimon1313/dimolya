@@ -8,6 +8,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
+    <canvas id="forest-background" aria-hidden="true"></canvas>
+
     <main class="invite-page">
         <section class="invite-hero" aria-labelledby="invite-title">
             <article class="invite-card invite-card-main">
@@ -57,11 +59,6 @@
                     <span class="small-heart" aria-hidden="true">♡</span>
                 </figure>
             </article>
-
-            <aside class="invite-card signature-card" aria-label="Оля плюс Діма">
-                <div class="signature-heart" aria-hidden="true"></div>
-                <p class="signature-text">Оля<br><span>+</span><br>Діма</p>
-            </aside>
         </section>
 
         <section class="rsvp-section" aria-labelledby="rsvp-title">
