@@ -1,0 +1,425 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-serif-display: 'Cormorant Garamond', 'Iowan Old Style', 'Baskerville', 'Times New Roman', serif;
+    --font-signature: 'Snell Roundhand', 'Brush Script MT', 'Segoe Script', cursive;
+    --font-sans: 'Instrument Sans', 'Avenir Next', 'Segoe UI', sans-serif;
+}
+
+@layer base {
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    html {
+        min-width: 320px;
+        background: #68696d;
+    }
+
+    body {
+        min-height: 100vh;
+        margin: 0;
+        color: #39362e;
+        background:
+            radial-gradient(circle at 20% 8%, rgb(255 255 255 / 24%), transparent 28rem),
+            linear-gradient(135deg, #747579 0%, #5f6064 100%);
+        font-family: var(--font-serif-display);
+    }
+
+    img,
+    iframe {
+        display: block;
+    }
+}
+
+@layer components {
+    .invite-page {
+        width: min(100%, 1280px);
+        margin: 0 auto;
+        padding: 18px 14px 40px;
+    }
+
+    .invite-hero {
+        display: grid;
+        gap: 18px;
+        align-items: stretch;
+    }
+
+    .invite-card {
+        position: relative;
+        overflow: hidden;
+        min-height: 760px;
+        background:
+            radial-gradient(circle at 24% 20%, rgb(255 255 255 / 68%), transparent 15rem),
+            radial-gradient(circle at 78% 12%, rgb(88 98 65 / 8%), transparent 14rem),
+            repeating-linear-gradient(100deg, rgb(62 55 42 / 3%) 0 1px, transparent 1px 8px),
+            repeating-linear-gradient(18deg, rgb(62 55 42 / 2%) 0 1px, transparent 1px 11px),
+            #f4f0e8;
+        border: 1px solid rgb(255 255 255 / 40%);
+        box-shadow: 0 18px 24px rgb(22 22 22 / 24%);
+    }
+
+    .invite-card::after {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        content: "";
+        background:
+            linear-gradient(90deg, rgb(255 255 255 / 18%), transparent 34%, rgb(49 44 36 / 3%)),
+            radial-gradient(circle at 50% 50%, transparent 54%, rgb(67 55 45 / 6%) 100%);
+        mix-blend-mode: multiply;
+    }
+
+    .invite-card-main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: calc(100vh - 36px);
+        padding: clamp(58px, 13vw, 88px) 22px 0;
+        text-align: center;
+    }
+
+    .rule {
+        width: min(68%, 410px);
+        height: 1px;
+        flex: 0 0 auto;
+        background: rgb(54 50 42 / 36%);
+    }
+
+    .rule-top {
+        margin-bottom: 28px;
+    }
+
+    .rule-short {
+        width: min(68%, 410px);
+        margin-bottom: 18px;
+    }
+
+    .rule-tiny {
+        width: 64px;
+        margin: 6px 0 12px;
+        background: rgb(54 50 42 / 24%);
+    }
+
+    .invite-kicker,
+    .invite-title,
+    .event-place,
+    .dress-code h2,
+    .dress-code p {
+        position: relative;
+        z-index: 2;
+        margin: 0;
+    }
+
+    .invite-kicker {
+        max-width: 18rem;
+        font-size: clamp(1.05rem, 4.9vw, 1.38rem);
+        line-height: 1.18;
+    }
+
+    .invite-title {
+        max-width: 20rem;
+        font-size: clamp(1rem, 4.45vw, 1.3rem);
+        font-weight: 400;
+        line-height: 1.16;
+    }
+
+    .invite-title span {
+        font-size: 0.82em;
+        color: #77795c;
+    }
+
+    .event-date {
+        position: relative;
+        z-index: 2;
+        margin-top: 22px;
+        color: #24231f;
+        font-size: clamp(1.8rem, 8vw, 2.55rem);
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: 0.22em;
+        text-indent: 0.22em;
+    }
+
+    .event-time {
+        position: relative;
+        z-index: 2;
+        margin-top: 6px;
+        color: #24231f;
+        font-size: clamp(1.75rem, 7.4vw, 2.35rem);
+        line-height: 1;
+    }
+
+    .event-place {
+        font-size: clamp(1.04rem, 4.3vw, 1.35rem);
+        line-height: 1.2;
+    }
+
+    .dress-code {
+        margin-top: 22px;
+    }
+
+    .dress-code h2 {
+        font-size: clamp(1.02rem, 4.2vw, 1.28rem);
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+    }
+
+    .dress-code p {
+        margin-top: 8px;
+        font-size: clamp(0.94rem, 3.75vw, 1.12rem);
+        line-height: 1.18;
+    }
+
+    .palette {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        gap: clamp(10px, 3.2vw, 18px);
+        margin-top: 15px;
+    }
+
+    .palette span {
+        width: clamp(28px, 8vw, 42px);
+        aspect-ratio: 1;
+        border-radius: 999px;
+        background: var(--swatch);
+    }
+
+    .photo-heart {
+        position: relative;
+        z-index: 1;
+        width: min(102%, 500px);
+        margin: 16px 0 0;
+        flex: 1 1 auto;
+        min-height: 260px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    .photo-heart img {
+        position: relative;
+        z-index: 2;
+        width: min(92%, 420px);
+        max-height: 38vh;
+        object-fit: contain;
+        object-position: bottom center;
+        filter: sepia(0.1) contrast(0.92) saturate(0.9);
+    }
+
+    .heart-back {
+        position: absolute;
+        bottom: 5%;
+        width: 44%;
+        max-width: 210px;
+        aspect-ratio: 0.78;
+        border-radius: 56% 56% 44% 44%;
+        background:
+            repeating-linear-gradient(115deg, rgb(84 93 57 / 14%) 0 3px, transparent 3px 7px),
+            #7a7d5b;
+        opacity: 0.86;
+        transform-origin: bottom center;
+    }
+
+    .heart-back-left {
+        left: 12%;
+        transform: rotate(-38deg);
+    }
+
+    .heart-back-right {
+        right: 12%;
+        transform: rotate(38deg);
+    }
+
+    .small-heart {
+        position: absolute;
+        z-index: 3;
+        top: 6%;
+        left: 50%;
+        color: #77795c;
+        font-size: clamp(2.4rem, 10vw, 3.8rem);
+        line-height: 1;
+        transform: translateX(-50%);
+    }
+
+    .signature-card {
+        display: none;
+    }
+
+    .rsvp-section {
+        display: grid;
+        gap: 18px;
+        margin-top: 18px;
+    }
+
+    .rsvp-copy {
+        padding: 8px 4px 0;
+        color: #f4f0e8;
+        text-align: center;
+    }
+
+    .rsvp-copy p {
+        margin: 0 0 8px;
+        font-family: var(--font-sans);
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.28em;
+    }
+
+    .rsvp-copy h2 {
+        max-width: 30rem;
+        margin: 0 auto;
+        font-size: clamp(1.35rem, 6vw, 2rem);
+        font-weight: 400;
+        line-height: 1.08;
+    }
+
+    .form-frame {
+        overflow: hidden;
+        width: 100%;
+        min-height: 659px;
+        background: #f4f0e8;
+        border: 1px solid rgb(255 255 255 / 35%);
+        box-shadow: 0 18px 24px rgb(22 22 22 / 18%);
+    }
+
+    .form-frame iframe {
+        width: 100%;
+        min-height: 659px;
+        border: 0;
+        background: #f4f0e8;
+    }
+}
+
+@media (min-width: 720px) {
+    .invite-page {
+        padding: 28px;
+    }
+
+    .invite-hero {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 40px;
+    }
+
+    .invite-card {
+        min-height: min(74vw, 834px);
+    }
+
+    .invite-card-main {
+        min-height: min(74vw, 834px);
+        padding-inline: 42px;
+    }
+
+    .photo-heart img {
+        max-height: 34vh;
+    }
+
+    .signature-card {
+        display: grid;
+        place-items: center;
+    }
+
+    .signature-heart {
+        position: absolute;
+        width: min(32vw, 286px);
+        aspect-ratio: 1;
+        background:
+            repeating-linear-gradient(112deg, rgb(255 255 255 / 10%) 0 3px, transparent 3px 8px),
+            #77795c;
+        opacity: 0.88;
+        transform: rotate(45deg);
+    }
+
+    .signature-heart::before,
+    .signature-heart::after {
+        position: absolute;
+        width: 100%;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: inherit;
+        content: "";
+    }
+
+    .signature-heart::before {
+        left: -50%;
+    }
+
+    .signature-heart::after {
+        top: -50%;
+    }
+
+    .signature-text {
+        position: relative;
+        z-index: 2;
+        margin: 0;
+        color: #101010;
+        font-family: var(--font-signature);
+        font-size: clamp(4.8rem, 10vw, 8.6rem);
+        font-weight: 400;
+        line-height: 0.68;
+        transform: rotate(-10deg);
+    }
+
+    .signature-text span {
+        display: inline-block;
+        padding-left: 0.7em;
+        font-family: var(--font-serif-display);
+        font-size: 0.44em;
+        line-height: 0.5;
+    }
+
+    .rsvp-section {
+        margin-top: 40px;
+    }
+}
+
+@media (min-width: 980px) {
+    .invite-page {
+        padding: 28px 28px 52px;
+    }
+
+    .invite-hero {
+        gap: 40px;
+    }
+
+    .rsvp-section {
+        grid-template-columns: 0.7fr 1fr;
+        align-items: start;
+        gap: 40px;
+    }
+
+    .rsvp-copy {
+        position: sticky;
+        top: 28px;
+        padding-top: 80px;
+        text-align: left;
+    }
+
+    .rsvp-copy h2 {
+        margin: 0;
+        font-size: clamp(2rem, 3.6vw, 3.45rem);
+    }
+}
+
+@media (max-width: 380px) {
+    .invite-page {
+        padding-inline: 10px;
+    }
+
+    .invite-card-main {
+        padding-inline: 16px;
+    }
+
+    .event-date {
+        letter-spacing: 0.16em;
+        text-indent: 0.16em;
+    }
+}
