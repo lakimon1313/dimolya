@@ -291,7 +291,6 @@
     .form-frame {
         overflow: hidden;
         width: 100%;
-        min-height: 720px;
         background: #f4f0e8;
         border: 1px solid rgb(255 255 255 / 35%);
         box-shadow: 0 18px 24px rgb(22 22 22 / 18%);
@@ -299,7 +298,6 @@
 
     .form-frame iframe {
         width: 100%;
-        min-height: 800px;
         border: 0;
         background: #f4f0e8;
     }
@@ -376,7 +374,7 @@
 @media (min-width: 696px) {
     .form-frame {
         iframe {
-            height: 720px
+            height: 700px
         }
     }
 }
